@@ -1,0 +1,157 @@
+ul,
+li {
+  list-style: none;
+  text-decoration: none;
+}
+input {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+}
+input:invalid {
+  border-color: #ccc;
+}
+input:valid {
+  border-color: green;
+}
+
+.form-ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 8px 0;
+}
+.form-ul li input[type='checkbox'],
+.form-ul li input[type='radio'] {
+  width: min-content;
+}
+form fieldset {
+  margin-bottom: 16px;
+}
+
+.hidden {
+  display: none;
+}
+
+.section__modal-starpage {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: aliceblue;
+  font-size: 30px;
+}
+
+.section__modal-starpage-1 {
+  background-color: aquamarine;
+}
+
+.section__modal-starpage-2 {
+  background-color: wheat;
+}
+
+.section__modal-starpage-3 {
+  background-color: aliceblue;
+}
+
+.btn-send {
+  display: inline-block;
+
+  width: 100%;
+  padding: 8px 16px;
+
+  font-size: 14px;
+  line-height: 28px;
+  color: white;
+  font-weight: 700;
+  border: 0;
+  background-color: teal;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.btn-send:hover {
+  box-shadow: 0 0px 10px #777c;
+}
+
+* {
+  --modal-width: 300px;
+  --modal-height: 80vh;
+  --modal-transition: 80vh;
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* 
+  visibility: hidden;
+  opacity: 0; */
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: var(--modal-transition);
+}
+.modal__dialog {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-height: var(--modal-height);
+
+  border-radius: 10px;
+  transition: var(--modal-transition);
+  transform: translateY(-50px);
+}
+
+.modal__dialog-header {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.modal__dialog-header-content {
+  flex-grow: 1;
+}
+.modal__dialog-header-close {
+  display: flex;
+  align-items: center;
+}
+.modal__dialog-header-btn-close {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  border: 0;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.modal__dialog-body {
+  flex-grow: 1;
+  overflow: auto;
+}
+.modal__dialog-footer {
+  background-color: teal;
+}
+
+.modal__dialog-header,
+.modal__dialog-body {
+  background-color: white;
+  padding: 0 16px;
+}
+
+.modal__dialog-header,
+.modal__dialog-footer {
+  transition: var(--modal-transition);
+}
+
+.modal--s .modal__dialog {
+  width: 300px;
+}
+.modal--m .modal__dialog {
+  width: 600px;
+}
+.modal--l .modal__dialog {
+  width: 900px;
+}

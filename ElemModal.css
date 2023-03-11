@@ -29,9 +29,24 @@ input:valid {
 form fieldset {
   margin-bottom: 16px;
 }
-
+button:disabled {
+  border-top: 1px solid #ccc;
+  color: seagreen;
+  background-color: white;
+  cursor: auto;
+}
+button:disabled:hover {
+  box-shadow: none;
+}
 .hidden {
   display: none;
+}
+.onSuccess__modal {
+  font-size: 18px;
+  font-weight: 500;
+  color: seagreen;
+  margin-bottom: 32px;
+  text-align: center;
 }
 
 .section__modal-starpage {

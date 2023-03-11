@@ -16,7 +16,9 @@
     <div class="modal modal--s" id="modal-1">
       <div class="modal__dialog">
         <div class="modal__dialog-header">
-          <div class="modal__dialog-header-content"><h2>Сайт-визитка</h2></div>
+          <div class="modal__dialog-header-content">
+            <h2>Заявка на разработку</h2>
+          </div>
           <div class="modal__dialog-header-close">
             <button class="js-modal-close modal__dialog-header-btn-close">
               <span>&times;</span>
@@ -24,8 +26,7 @@
           </div>
         </div>
         <div class="modal__dialog-body">
-          <form id="modal-form" method="post" autocomplete="off">
-            <h3>Заявка на разработку</h3>
+          <form id="modal-form" enctype="multipart/form-data" method="post">
             <fieldset>
               <legend>Персональные данные</legend>
               <ul class="form-ul">
@@ -151,15 +152,24 @@
               <input type="reset" value="Очистить все поля" />
             </fieldset>
           </form>
+          <p class="onSuccess__modal hidden" id="onSuccess__modal">
+            Менеджер получил заявку<br />и свяжется с Вами сразу, как её
+            обработает :)
+          </p>
         </div>
         <div class="modal__dialog-footer">
           <button
             class="js-modal-close btn-send"
             type="submit"
             form="modal-form"
+            disabled
           >
             <span id="loader-modal" class="hidden">Отправляем...</span
-            ><span id="btn-send-modal">Отправить заявку</span>
+            ><span id="btn-send-modal" class="hidden">Отправить заявку</span>
+            <span id="valid-send-modal">Заполните обязательные поля</span>
+            <span id="success-send-modal" class="hidden"
+              >Ваша заявка отправлена!</span
+            >
           </button>
         </div>
       </div>
